@@ -1,0 +1,15 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace BasicApi.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class MCPController : ControllerBase
+{
+    // POST /mcp/query
+    [HttpPost("query")]
+    public IActionResult Query([FromBody] string input)
+    {
+        return Ok(new { Received = input });
+    }
+}
